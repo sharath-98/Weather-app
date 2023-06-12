@@ -9,15 +9,28 @@ import { WeatherData } from './models/weather.model';
 })
 export class AppComponent implements OnInit {
 
-  weatherData!: WeatherData;
+  weatherData?: WeatherData;
+  cityName:string = "London";
 
   constructor(private weatherService: WeatherService) { }
   
   ngOnInit(): void {
-    this.weatherService.getWeatherData('London').subscribe((data) =>
+    this.getData(this.cityName);
+    this.cityName = "";
+  }
+
+  OnSubmit() {
+    this.getData(this.cityName);
+    this.cityName = "";
+  }
+
+  getData(cityName : string) {
+    
+    this.weatherService.getWeatherData(cityName).subscribe((data) =>
     {
       console.log(data)
       this.weatherData = data;
     });
   }
+
   }

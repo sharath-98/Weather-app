@@ -131,3 +131,18 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+.search{
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.search input{
+    border: none;
+    outline: none;
+    background-color: var(--shadow-light);
+    padding: 1em;
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+}
